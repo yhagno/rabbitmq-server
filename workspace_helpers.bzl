@@ -158,6 +158,14 @@ erlang_lib(
     )
 
     github_bazel_erlang_lib(
+        name = "khepri",
+        org = "rabbitmq",
+        ref = "075f6d02c18e04c152f6d631c6aaa1b4846da706",
+        version = "075f6d02c18e04c152f6d631c6aaa1b4846da706",
+        build_file = rabbitmq_workspace + "//:BUILD.khepri",
+    )
+
+    github_bazel_erlang_lib(
         name = "meck",
         org = "eproxus",
     )
