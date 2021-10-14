@@ -160,9 +160,8 @@ case $CMD in
             -n ${RABBITMQ_NODENAME} \
             wait \
             --timeout ${RMQCTL_WAIT_TIMEOUT} \
-            ${RABBITMQ_PID_FILE}
-
-        {ERLANG_HOME}/bin/erl \
+            ${RABBITMQ_PID_FILE} \
+        && {ERLANG_HOME}/bin/erl \
             -noinput \
             -eval "true = rpc:call('${RABBITMQ_NODENAME}', rabbit, is_running, []), halt()." \
             -sname {SNAME} \
