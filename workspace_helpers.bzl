@@ -174,9 +174,10 @@ erlang_lib(
         remote = "https://github.com/rabbitmq/osiris.git",
     )
 
-    hex_pm_bazel_erlang_lib(
+    git_repository(
         name = "prometheus",
-        version = "4.8.1",
+        branch = "pre-rendered-labels-support",
+        remote = "https://github.com/binarin/prometheus.erl.git",
         first_srcs = [
             "src/prometheus_collector.erl",
             "src/prometheus_format.erl",
@@ -186,7 +187,6 @@ erlang_lib(
         deps = [
             "@quantile_estimator//:bazel_erlang_lib",
         ],
-        sha256 = "6edfbe928d271c7f657a6f2c46258738086584bd6cae4a000b8b9a6009ba23a5",
     )
 
     github_bazel_erlang_lib(
