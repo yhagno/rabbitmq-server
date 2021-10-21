@@ -40,7 +40,7 @@
          list_child_data/1,
 
          put/2, put/3,
-         clear_data/1,
+         clear_payload/1,
          delete/1,
          delete_or_fail/1,
 
@@ -339,7 +339,7 @@ keep_data_only_in_result({ok, Result}) ->
 keep_data_only_in_result(Error) ->
     Error.
 
-clear_data(Path) -> ?wait(khepri:clear_data(?STORE_ID, Path)).
+clear_payload(Path) -> ?wait(khepri:clear_payload(?STORE_ID, Path)).
 delete(Path) -> ?wait(khepri:delete(?STORE_ID, Path)).
 
 delete_or_fail(Path) ->
